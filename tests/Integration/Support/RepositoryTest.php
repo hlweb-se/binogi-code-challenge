@@ -91,5 +91,7 @@ class RepositoryTest extends FrameworkTest
         $found = $this->repository->find($user->id);
         $this->assertInstanceOf(User::class, $found);
         $this->assertEquals($user->id, $found->id);
+        $this->assertNotEquals($user->nickname, '');
+        $this->assertNotNull($user->nickname);
     }
 }
